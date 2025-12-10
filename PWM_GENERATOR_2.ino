@@ -1,7 +1,9 @@
 /*
- * Program: 50Hz a PWM z potenciometru
+ * Program: cca 50Hz a PWM 
  * Popis: Konfiguruje Timer1 pro generovani 50Hz PWM na pinu 9.
- * 
+ * A1 potenciometr střídy
+ * A0 potenciometr frekvence
+ * Pin4 tlačitko - pro skokovou změnu PWM (invertuje PWM)
  */
 
 // Pokud odkomentujete nasledujici radek, aktivujete ladici rezim (debug mode)
@@ -39,7 +41,7 @@ void setup() {
   // CS11 = 1 a CS10 = 1
   TCCR1B |= (1 << CS11) | (1 << CS10);
   
-   Serial.begin(115200); // Odkomentujte pro ladeni
+   Serial.begin(9600); // Odkomentujte pro ladeni
    
 }
 
